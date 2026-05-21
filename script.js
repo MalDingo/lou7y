@@ -24,3 +24,35 @@ document.querySelectorAll(".whatsapp-link").forEach((link) => {
   link.target = "_blank";
   link.rel = "noreferrer";
 });
+
+const designForm = document.querySelector("#design-form");
+
+designForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(designForm);
+  const idea = formData.get("idea")?.toString().trim();
+  const name = formData.get("name")?.toString().trim() || "ما فماش";
+  const colors = formData.get("colors")?.toString().trim() || "ما فماش";
+  const size = formData.get("size")?.toString().trim() || "مازال";
+  const referenceFile = formData.get("reference");
+  const hasReference =
+    referenceFile instanceof File && referenceFile.name
+      ? "عندي صورة مثال ونبعثها هنا."
+      : "ما عنديش صورة مثال.";
+
+  const message = [
+    "عسلامة، نحب نطلب تصميم خاص.",
+    `شنوة نحب في التصميم: ${idea}`,
+    `الاسم: ${name}`,
+    `الالوان: ${colors}`,
+    `القياس: ${size}`,
+    hasReference,
+  ].join("\n");
+
+  window.open(
+    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+    "_blank",
+    "noreferrer",
+  );
+});
