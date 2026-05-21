@@ -1,5 +1,5 @@
 // Replace this number with your WhatsApp number in international format.
-const whatsappNumber = "2340000000000";
+const whatsappNumber = "21622421292";
 
 const orderMessages = {
   featured:
