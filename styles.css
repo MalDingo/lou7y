@@ -89,22 +89,19 @@ nav,
   direction: ltr;
 }
 
-.brand-mark {
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  border-radius: 6px;
-  background: var(--accent);
-  color: white;
-  font-family: "Space Grotesk", Cairo, Arial, sans-serif;
-}
-
 nav {
   justify-content: center;
   gap: clamp(12px, 2vw, 28px);
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.brand img {
+  width: clamp(92px, 10vw, 138px);
+  height: 48px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
 }
 
 nav a:hover,
@@ -486,6 +483,14 @@ blockquote footer {
   margin: 18px 0 0;
 }
 
+.footer-logo {
+  width: min(180px, 42vw);
+  height: 72px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
 @media (max-width: 920px) {
   .site-header {
     grid-template-columns: 1fr auto;
@@ -532,11 +537,9 @@ blockquote footer {
     padding: 10px;
   }
 
-  .brand span:last-child {
-    max-width: 86px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  .brand img {
+    width: 88px;
+    height: 40px;
   }
 
   .hero {
