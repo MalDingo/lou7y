@@ -1,5 +1,6 @@
 // Replace this number with your WhatsApp number in international format.
 const whatsappNumber = "21622421292";
+const messengerPageId = "61589614307266";
 
 const orderMessages = {
   featured:
@@ -33,6 +34,12 @@ document.querySelectorAll(".whatsapp-link").forEach((link) => {
   const message = orderMessages[productKey] || orderMessages.catalog;
 
   link.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+});
+
+document.querySelectorAll(".messenger-link").forEach((link) => {
+  link.href = `https://m.me/${messengerPageId}`;
   link.target = "_blank";
   link.rel = "noreferrer";
 });
